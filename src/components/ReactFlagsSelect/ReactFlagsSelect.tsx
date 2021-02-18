@@ -118,8 +118,8 @@ const ReactFlagsSelect: React.FC<Props> = ({
       const label = getLabel(key);
       if (isCustomLabelObject(label)) {
         return (
-          (label as CustomLabel)?.primary?.includes(value) ||
-          (label as CustomLabel)?.secondary?.includes(value)
+          (label as CustomLabel)?.primary?.toLowerCase().includes(value.toLowerCase()) ||
+          (label as CustomLabel)?.secondary?.toLowerCase().includes(value.toLowerCase())
         );
       }
       return (label as string)?.includes(value);
